@@ -8,9 +8,9 @@ const geocode = (address, callback) => {
   //object shorthand in request option object and destructuring in response object
   request({ url, json: true }, (error, { body }) => {
     if (error) {
-      callback("Unable to connect to location", undefined);
+      callback(" ! Unable to connect to location", undefined);
     } else if (body.features.length === 0) {
-      callback("Unable to find Loacation try another search", undefined);
+      callback(" ! Unable to find Loacation try another search", undefined);
     } else {
       callback(undefined, {
         longitude: body.features[0].center[0],
